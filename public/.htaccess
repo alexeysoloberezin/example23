@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule ^ru$ /ru.html [L]
+RewriteRule ^en$ /en.html [L]

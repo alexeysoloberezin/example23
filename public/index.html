@@ -1,0 +1,1740 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Neuro Aura</title>
+    <!--    <meta de>-->
+    <style>
+        .header-nav a{
+            padding: 3px 8px;
+        }
+        html,body{scroll-behavior:smooth}body::-webkit-scrollbar{width:10px}body::-webkit-scrollbar-track{background:#111}body::-webkit-scrollbar-thumb{background:#00bcbc;border-radius:12px}body::-webkit-scrollbar-thumb:hover{background:#099}*{scrollbar-color:#00bcbc #111}body{background:#021c27;color:#fff}*{box-sizing:border-box}body,html{max-width:100vw;width:100%;overflow-x:hidden}a{color:#fff;display:inline-block;text-decoration:none}@font-face{font-family:'Avenir Next Cyr';src:url(./fonts/AvenirNextCyr-Thin.woff) format('woff');font-weight:100;font-style:normal}@font-face{font-family:'Avenir Next Cyr';src:url(./fonts/AvenirNextCyr-Regula.woff) format('woff');font-weight:400;font-style:normal}@font-face{font-family:'Avenir Next Cyr';src:url(./fonts/AvenirNextCyr-Medium.woff) format('woff');font-weight:500;font-style:normal}@font-face{font-family:'Avenir Next Cyr';src:url(./fonts/AvenirNextCyr-Bold.woff) format('woff');font-weight:700;font-style:normal}@font-face{font-family:'Avenir Next Cyr';src:url(./fonts/AvenirNextCyr-Heavy.woff) format('woff');font-weight:900;font-style:normal}html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}.container{max-width:1200px;margin:0 auto;padding:0 15px}.header{padding:20px 0}@media (max-width:500px){.header{padding:5px 0 12px}}.header-row{display:flex;align-items:center;justify-content:space-between}.header-nav{display:flex;font-size: 15px;align-items:center;@media (max-width:1000px){position:fixed;top:0;right:0;width:100dvw;height:100dvh;transform:translateY(-100dvh);background:#0c2a3d;z-index:1000;display:flex;flex-direction:column;gap: 20px; align-items:center;font-size:20px;transition:.4s ease;&.active{transform:translateY(0);padding-top:100px}}}body,*{font-family:'Avenir Next Cyr',sans-serif;line-height:1.2}.tag{color:#00bcbc;font-size:18px;font-family:'Manrope',Arial,sans-serif;line-height:1.55;width:fit-content;font-weight:500;padding:8px 16px;border-radius:12px 12px 12px 12px;background-color:#06333a;background-position:center center;border-color:#fff0;border-style:solid;transition:background-color 0.2s ease-in-out,color 0.2s ease-in-out,border-color 0.2s ease-in-out;@media (max-width:500px){font-size:15px}}.mainBlock{padding-top:70px;position:relative;@media (max-width:750px){padding-top:0}}.mainBlock .container{position:relative}.mainBlock .btn{margin-top:30px}@media (max-width:600px){.mainBlock .btn{margin-top:14px}}.mainBlock h1{max-width:600px;@media (max-width:1000px){max-width:400px}@media (max-width:750px){margin:0 auto}}.mainBlock-wrp .tag{margin-bottom:10px}.mainBlock-wrp{position:relative;z-index:10;@media (max-width:750px){text-align:center;display:flex;flex-direction:column;align-items:center}}h1{vertical-align:middle;color:#fff;font-size:clamp(24px, 4vw, 54px);line-height:1.2;font-weight:600;letter-spacing:-.3px;background-position:center center;border-color:#fff0;border-style:solid}.btn{color:#fff;font-size:22px;line-height:1.55;font-weight:600;padding:15px 40px;border-radius:50px 50px 50px 50px;background-color:#38a8ef;box-shadow:0 0 15px #38a8ef;background-position:center center;border-color:#fff0;border-style:solid;transition:background-color 0.2s ease-in-out,color 0.2s ease-in-out,border-color 0.2s ease-in-out;@media (max-width:500px){font-size:19px;padding:15px 25px}}.mainBlock-tags{background:#0c2a3d;display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;border-radius:20px;margin-top:40px;@media (max-width:1000px){grid-template-columns:1fr 1fr;max-width:50vw;overflow:hidden}@media (max-width:750px){grid-template-columns:1fr 1fr;max-width:100%}}.mainBlock-tags>div{border-right:1px solid rgb(255 255 255 / .08);padding:20px;font-size:16px;@media (max-width:1000px){border-bottom:1px solid rgb(255 255 255 / .08);text-align:left}@media (max-width:500px){font-size:14px;padding:14px}}.mainBlock-tags>div img{width:50px;height:50px;border:4px solid #000;border-radius:12px;margin-bottom:10px;object-fit:cover}.mainBlock-video{position:absolute;bottom:0;right:30px;width:300px;aspect-ratio:9/16;@media (max-width:1000px){bottom:initial;top:0}@media (max-width:750px){position:relative;margin:-20px auto;transform:translateX(20px) scale(.75)}}.mainBlock-video-fon{position:absolute;top:50%;left:50%;width:650px;height:650px;pointer-events:none;transform:translate(-50%,-50%);z-index:1}.mainBlock-video-fon img{width:100%;object-fit:contain;height:100%}.mainBlock-video-phone{width:320px;height:550px;object-fit:contain;pointer-events:none;border-radius:12px;z-index:10;position:absolute;top:0;left:0}.header-logo{position:relative;z-index:1002;font-size:24px;font-weight:600;text-transform:uppercase;color:#38a8ef}.mainBlock-video-preview{width:257px;height:535px;transform:translate(32px,10px);z-index:5;object-fit:cover;border-radius:41px;position:absolute;top:0;left:0}.mainBlock-video iframe,.mainBlock-video video{width:257px;height:536px;transform:translate(32px,7px);display:block;position:relative;z-index:5;border-radius:50px;object-fit:cover}.burger{position:relative;z-index:1004;@media (min-width:1000px){display:none}svg{width:50px;height:50px}}#top-line,#bottom-line,#middle-line{transform-box:fill-box;transform-origin:center}.burger.active svg{#top-line{animation:down-rotate 0.6s ease-out both}#bottom-line{animation:up-rotate 0.6s ease-out both}#middle-line{animation:hide 0.6s ease-out forwards}}@keyframes hide{29%{opacity:1}30%{opacity:0}100%{opacity:0}}@keyframes up-rotate{0%{animation-timing-function:cubic-bezier(.16,-.88,.97,.53);transform:translateY(0)}30%{transform-origin:center;animation-timing-function:cubic-bezier(.34,1.56,.64,1);transform:translateY(-10px)}100%{transform-origin:center;transform:translateY(-10px) rotate(45deg) scale(.9)}}@keyframes down-rotate{0%{animation-timing-function:cubic-bezier(.16,-.88,.97,.53);transform:translateY(0)}30%{transform-origin:center;animation-timing-function:cubic-bezier(.34,1.56,.64,1);transform:translateY(10px)}100%{transform-origin:center;transform:translateY(10px) rotate(-45deg) scale(.9)}}body{max-height:100vh}section{margin:90px 0;position:relative;.container,h2{position:relative;z-index:5}}section:after{content:'';width:1200px;height:1200px;position:absolute;top:0;z-index:2;transform:translateY(-50%);pointer-events:none;display:block;right:-100px;background:radial-gradient(circle,#38a8ef 0%,#fff0 50%);filter:blur(50px);opacity:.4}section:nth-child(2n - 1):after{right:initial;left:0}section h2{margin-bottom:30px;@media (max-width:500px){margin-bottom:15px}}@media (max-width:1000px){section{margin:50px 0}section h2{margin-bottom:12px}}h2{font-size:clamp(24px, 5vw, 44px);font-weight:500;text-align:center}h2.small{font-size:clamp(21px, 5vw, 44px)}@media (max-width:1000px){h2 br{display:none}}h2 span{background:linear-gradient(90deg,rgb(56 168 239 / .45) 0%,rgb(142 56 239 / .45) 100%);color:#fff;padding:4px 10px;display:inline-block;border-radius:10px;backdrop-filter:blur(5px)}.mainBlock-video-tag{background:rgb(6 51 58 / .71);backdrop-filter:blur(2px);color:#00bcbc;padding:6px 10px;position:absolute;margin-left:8px;width:fit-content;white-space:nowrap;display:flex;font-size:18px;flex-direction:row-reverse;align-items:center;text-align:center;top:-40px;border-radius:6px;left:50%;transform:translateX(-50%);z-index:40}.mainBlock-video-tag img{max-width:24px}.mainBlock-video-tag.sm{margin-left:0}@media (max-width:600px){.mainBlock-video-tag{top:-30px;transform:translateX(-50%)}}
+    </style>
+<body id="#smooth-wrapper">
+<div id="#smooth-content">
+    <div class="header">
+        <div class="container">
+            <div class="header-row">
+                <div class="header-logo">
+                    NEURO AURA
+                </div>
+                <ul class="header-nav">
+                    <li><a class="goTo" href="#sec6">Где зарабатывать?</a></li>
+                    <li><a class="goTo" href="#sec2">Примеры работ</a></li>
+                    <li><a class="goTo" href="#sec4">Как проходит обучение</a></li>
+                    <li><a class="goTo" href="#sec5">Кейсы учеников</a></li>
+                    <li><a class="goTo" href="#sec1">Отзывы учеников</a></li>
+                    <li><a class="goTo" href="#sec3">Частые вопросы</a></li>
+                </ul>
+                <div class="burger">
+                    <svg id="hamburger" class="Header__toggle-svg" viewbox="0 0 60 40">
+                        <g stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                            <path id="top-line" d="M10,10 L50,10 Z"></path>
+                            <path id="middle-line" d="M10,20 L50,20 Z"></path>
+                            <path id="bottom-line" d="M10,30 L50,30 Z"></path>
+                        </g>
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="mainBlock">
+        <div class="container">
+            <div class="mainBlock-wrp">
+                <div class="tag">
+                    Мини-курс “Нейростети для дизайна”
+                </div>
+                <h1 id="title">Начни зарабатывать
+                    на AI-дизайне уже сейчас
+                </h1>
+                <a href="#tariffs" class="btn goTo mainBtn">Хочу на курс</a>
+                <div class="mainBlock-video" id="videoContainer">
+                    <div class="mainBlock-video-tag">
+                        <img src="/images/down.svg" alt="">
+                        Смотри видео
+                        <img src="/images/down.svg" alt="">
+                    </div>
+                    <picture>
+                        <source srcset="./images/phone_2.webp" type="image/webp">
+                        <img class="mainBlock-video-phone" src="./images/phone_2.png" alt="">
+                    </picture>
+
+<!--                    <iframe class="mainBlock-video-preview"  src="https://www.youtube.com/embed/U8idB8A727I"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+
+                    <picture>
+                        <source srcset="./images/mainVideoPreview.webp" type="image/webp">
+                        <img class="mainBlock-video-preview" src="./images/mainVideoPreview.jpg" id="video-play" alt="">
+                    </picture>
+                </div>
+
+                <div class="mainBlock-tags">
+                    <div>
+                        <img src="./images/icons/ic_3.jpg" alt="">
+                        <div>Анимируй<br/>
+                            изображения
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./images/icons/ic_8.jpg" alt="">
+                        <div>Добавляй<br/>
+                            AI-озвучку и музыку
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./images/icons/ic_5.jpg" alt="">
+                        <div>
+                            Генерируй идеи <br/>
+                            и визуалы<br/>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./images/icons/ic_7.jpg" alt="">
+                        <div>
+                            Собери полноценный ролик в портфолио
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <script>
+              window.addEventListener('load', function () {
+                const el = document.getElementById('video-play');
+                const videoContainer = document.getElementById('videoContainer');
+
+                const video = document.createElement('video');
+                video.autoplay = true;
+                video.muted = true;
+                video.loop = true;
+                video.playsInline = true;
+                video.controls = true;
+                video.poster = './images/mainVideoPreview.jpg';
+
+                let webmLoaded = false;
+
+                const sourceWEBM = document.createElement('source');
+                sourceWEBM.src = './images/example.webm';
+                sourceWEBM.type = 'video/webm'; // WebM
+
+                const sourceMOV = document.createElement('source');
+                sourceMOV.src = './images/example.mp4';
+                sourceMOV.type = 'video/quicktime'; // MOV
+
+                video.appendChild(sourceWEBM);
+                video.appendChild(sourceMOV);
+
+                // Если WebM загружен, сразу запускаем
+                sourceWEBM.addEventListener('canplaythrough', () => {
+                  if (!webmLoaded) {
+                    webmLoaded = true;
+                    startVideo();
+                  }
+                });
+
+                // Если WebM не поддерживается, ждём MOV
+                video.addEventListener('canplaythrough', () => {
+                  if (!webmLoaded) {
+                    startVideo();
+                  }
+                });
+
+                function startVideo() {
+                  setTimeout(() => {
+                    el.remove();
+                    videoContainer.append(video);
+                    video.play().catch(error => console.log('Autoplay blocked:', error));
+                  }, 1500);
+                }
+
+                function checkScroll() {
+                  if ((document.body.scrollTop || document.documentElement.scrollTop) > 1000) {
+                    console.log("Скролл больше 1000px, останавливаем видео");
+                    video.pause(); // Останавливаем видео
+                    document.body.removeEventListener('scroll', checkScroll); // Удаляем слушатель
+                  }
+                }
+
+                document.body.addEventListener('scroll', checkScroll);
+
+                videoContainer.insertAdjacentHTML('beforeend', `
+                    <div class="mainBlock-video-fon">
+                      <picture>
+                        <source srcset="images/videopngfon.webp" type="image/webp">
+                        <img src="images/videopngfon.png" alt="">
+                      </picture>
+                    </div>
+                  `);
+              })
+              ;
+            </script>
+        </div>
+
+        <script>
+          const head = document.querySelector('head');
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = './css/second.min.css';
+          head.appendChild(link);
+        </script>
+
+        <section  class="speed">
+            <div class="container">
+                <h2>Как AI ускоряет работу дизайнеров</h2>
+                <img src="./images/it_1.png" class="it it_1" alt="">
+                <div class="speed-box">
+                    <div class="speed-item">
+                        <div>Задача</div>
+                        <div>Без AI</div>
+                        <div>С AI</div>
+                    </div>
+
+                    <div class="speed-item">
+                        <div>Поиск референсов (поиск вдохновения и стиля)</div>
+                        <div class="time">2 часа</div>
+                        <div class="time">10 минут</div>
+                    </div>
+
+                    <div class="speed-item">
+                        <div>Генерация идей для дизайна (поиск концептов, создание мудборда)</div>
+                        <div class="time">3 часа</div>
+                        <div class="time">15 минут</div>
+                    </div>
+
+                    <div class="speed-item">
+                        <div>Создание изображений и графики</div>
+                        <div class="time">4 часа</div>
+                        <div class="time">30 минут</div>
+                    </div>
+
+                    <div class="speed-item">
+                        <div>Анимация статичных кадров</div>
+                        <div class="time">4 часа</div>
+                        <div class="time">30 минут</div>
+                    </div>
+
+                    <div class="speed-item">
+                        <div>Генерация трендовых эффектов (нейросети для фильтров и спецэффектов)</div>
+                        <div class="time">3 часа</div>
+                        <div class="time">20 минут</div>
+                    </div>
+
+                    <div class="speed-item">
+                        <div>Ретушь и удаление фона (автоматическая обработка фото)</div>
+                        <div class="time">2 часа</div>
+                        <div class="time">10 минут</div>
+                    </div>
+
+                    <div class="speed-item">
+                        <div>Озвучка и генерация музыки</div>
+                        <div class="time">5 часов</div>
+                        <div class="time">45 минут</div>
+                    </div>
+
+                    <div class="speed-item">
+                        <div>Финальная сборка ролика (монтаж и экспресс-анимация)</div>
+                        <div class="time">6 часов</div>
+                        <div class="time">1 час</div>
+                    </div>
+
+                    <div class="speed-item">
+                        <div>Создание презентаций и графики</div>
+                        <div class="time">3 часа</div>
+                        <div class="time">20 минут</div>
+                    </div>
+
+                    <div class="speed-item">
+                        <div>Адаптация дизайнов под разные форматы (автоматическая подгонка макетов)</div>
+                        <div class="time">2 часа</div>
+                        <div class="time">15 минут</div>
+                    </div>
+
+                    <div class="speed-item">
+                        <div>Написание текстов и сценариев для видео</div>
+                        <div class="time">4 часа</div>
+                        <div class="time">30 минут</div>
+                    </div>
+
+                    <div class="speed-item">
+                        <div>Генерация лендингов и UI-дизайна</div>
+                        <div class="time">5 часов</div>
+                        <div class="time">1 час</div>
+                    </div>
+
+                    <img src="" data-lazy-src="./images/hadn.svg" class="speed-hand lazy-img" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section  class="whatGet">
+            <div class="container">
+                <h2>Чему ты научишься на курсе?</h2>
+
+                <div class="whatGet-wrp">
+                    <div class="whatGet-el">
+                        <div>
+                            <div class="whatGet-tag-sec">Шаг 1</div>
+                            <div class="whatGet-title">Генерация идей и сценариев</div>
+                            <div class="whatGet-txt">Быстро придумывай креативные концепции и описания для AI-анимации с
+                                ChatGPT.
+                            </div>
+                            <div class="whatGet-tag">Ты научишься:</div>
+                            <ul>
+                                <li>Генерировать идеи и сценарии</li>
+                                <li>Создавать текстовые описания для анимации</li>
+                                <li>Писать промпты для точных результатов</li>
+                            </ul>
+                        </div>
+                        <img class="lazy-img" data-lazy-src="./images/les/le_1.jpg" src="" alt="">
+                    </div>
+
+                    <div class="whatGet-el">
+                        <div>
+                            <div class="whatGet-tag-sec">Шаг 2</div>
+                            <div class="whatGet-title">Создание AI-визуалов</div>
+                            <div class="whatGet-txt">Превращай текстовые идеи в стильные изображения для анимации.</div>
+                            <div class="whatGet-tag">Ты научишься:</div>
+                            <ul>
+                                <li>Генерировать референсы и визуалы</li>
+                                <li>Анализировать изображения в Describe</li>
+                                <li>Настраивать стиль и формат AI-картинок</li>
+                            </ul>
+                        </div>
+                        <img class="lazy-img" data-lazy-src="./images/les/le_2.jpg" src="" alt="">
+                    </div>
+
+                    <div class="whatGet-el">
+                        <div>
+                            <div class="whatGet-tag-sec">Шаг 3</div>
+                            <div class="whatGet-title">Анимируем изображение</div>
+                            <div class="whatGet-txt">Используй AI для автоматической анимации.</div>
+                            <div class="whatGet-tag">Ты научишься:</div>
+                            <ul>
+                                <li>Анимировать статичные изображения</li>
+                                <li>Улучшать AI-анимацию и избегать ошибок</li>
+                                <li>Настраивать скорость и стиль анимации</li>
+                            </ul>
+                        </div>
+                        <img class="lazy-img" data-lazy-src="./images/les/le_3.jpg" src="" alt="">
+                    </div>
+
+                    <div class="whatGet-el">
+                        <div>
+                            <div class="whatGet-tag-sec">Шаг 4</div>
+                            <div class="whatGet-title">Трендовые AI-эффекты</div>
+                            <div class="whatGet-txt">Добавляй модные эффекты, чтобы анимация выглядела профессионально.
+                            </div>
+                            <div class="whatGet-tag">Ты научишься:</div>
+                            <ul>
+                                <li>Работать с AI-эффектами</li>
+                                <li>Комбинировать AI и ручную обработку</li>
+                                <li>Создавай уникальные визуальные стили</li>
+                            </ul>
+                        </div>
+                        <img class="lazy-img" data-lazy-src="./images/les/le_4.jpg" src="" alt="">
+                    </div>
+
+                    <div class="whatGet-el isBlack">
+                        <div>
+                            <div class="whatGet-tag-sec">Шаг 5</div>
+                            <div class="whatGet-title">AI-озвучка и музыка</div>
+                            <div class="whatGet-txt">Создавай голос и саундтрек для своих анимаций.</div>
+                            <div class="whatGet-tag">Ты научишься:</div>
+                            <ul>
+                                <li>Генерировать озвучку</li>
+                                <li>Создавать AI-музыку</li>
+                            </ul>
+                        </div>
+                        <img class="lazy-img" data-lazy-src="./images/les/le_5.jpg" src="" alt="">
+
+                    </div>
+
+                    <div class="whatGet-el withSvgFon isBlue">
+                        <div>
+                            <div class="whatGet-tag-sec">Шаг 6</div>
+                            <div class="whatGet-title">Финальный проект — твоя AI-анимация</div>
+                            <div class="whatGet-txt">Собери все элементы и сделай готовый ролик.</div>
+                            <div class="whatGet-tag">Ты научишься:</div>
+                            <ul>
+                                <li>Объединять анимацию, эффекты и звук</li>
+                                <li>Подготовить ролик для портфолио</li>
+                            </ul>
+                        </div>
+                        <img class="lazy-img" data-lazy-src="./images/les/le_6.jpg" src="" alt="">
+                    </div>
+
+                    <div class="whatGet-fon">
+                        <picture>
+                            <source srcset="images/videopngfon.webp" type="image/webp">
+                            <img src="images/videopngfon.png" alt="">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills">
+            <div class="container">
+                <h2 class="small">Ты освоишь <span class="desc">6 ключевых AI-инструментов</span><br class="mob"/><span
+                        class="mob">6 ключевых AI-</span><span
+                        class="mob">инструментов</span> с обратной связью от преподавателя по<br/>
+                    каждому уроку – в игровом формате!</h2>
+
+                <!--            <div class="skills-wrp">-->
+                <!--                <div class="skills-el">-->
+                <!--                    <div class="skills-img">-->
+                <!--                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="5925.31591796875 5185.18408203125 20 28"-->
+                <!--                             data-guides="{&quot;vertical&quot;:[],&quot;horizontal&quot;:[]}">-->
+                <!--                            <path fill="none" stroke="white" fill-opacity="1" stroke-width="2" stroke-opacity="1"-->
+                <!--                                  font-size-adjust="none" stroke-linecap="round" id="tSvg16877b1a03c" title="Path 2"-->
+                <!--                                  d="M 5931.760229473684 5208.415010526315 C 5934.130616140351 5208.415010526315 5936.501002807017 5208.415010526315 5938.871389473684 5208.415010526315M 5932.649119473685 5211.184210526315 C 5934.426909473684 5211.184210526315 5936.204699473684 5211.184210526315 5937.982489473684 5211.184210526315M 5927.315789473684 5195.491900526315 C 5927.315789473684 5190.903690526315 5930.897509473684 5187.184210526315 5935.315789473684 5187.184210526315C 5939.734089473684 5187.184210526315 5943.315789473684 5190.903690526315 5943.315789473684 5195.491900526315C 5943.315789473684 5197.823310526315 5942.390989473684 5199.930510526315 5940.901489473684 5201.439310526315C 5940.243289473684 5202.106110526315 5939.7601894736845 5202.973810526315 5939.7601894736845 5203.928710526315C 5939.7601894736845 5204.877010526315 5939.019989473684 5205.645710526315 5938.106789473684 5205.645710526315C 5936.246119473684 5205.645710526315 5934.385449473684 5205.645710526315 5932.524779473684 5205.645710526315C 5931.611609473684 5205.645710526315 5930.871349473684 5204.877010526315 5930.871349473684 5203.928710526315C 5930.871349473684 5202.973810526315 5930.388339473684 5202.106110526315 5929.7300894736845 5201.439310526315C 5928.240619473684 5199.930510526315 5927.315789473684 5197.823410526315 5927.315789473684 5195.491900526315Z"></path>-->
+                <!--                            <defs></defs>-->
+                <!--                        </svg>-->
+                <!--                    </div>-->
+                <!--                    <div>-->
+                <!--                        <b>Midjourney + ChatGPT –</b>-->
+                <!--                        идеи и визуалы-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="skills-el">-->
+                <!--                    <div class="skills-img">-->
+                <!--                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="5925.31591796875 5185.18408203125 20 28"-->
+                <!--                             data-guides="{&quot;vertical&quot;:[],&quot;horizontal&quot;:[]}">-->
+                <!--                            <path fill="none" stroke="white" fill-opacity="1" stroke-width="2" stroke-opacity="1"-->
+                <!--                                  font-size-adjust="none" stroke-linecap="round" id="tSvg16877b1a03c" title="Path 2"-->
+                <!--                                  d="M 5931.760229473684 5208.415010526315 C 5934.130616140351 5208.415010526315 5936.501002807017 5208.415010526315 5938.871389473684 5208.415010526315M 5932.649119473685 5211.184210526315 C 5934.426909473684 5211.184210526315 5936.204699473684 5211.184210526315 5937.982489473684 5211.184210526315M 5927.315789473684 5195.491900526315 C 5927.315789473684 5190.903690526315 5930.897509473684 5187.184210526315 5935.315789473684 5187.184210526315C 5939.734089473684 5187.184210526315 5943.315789473684 5190.903690526315 5943.315789473684 5195.491900526315C 5943.315789473684 5197.823310526315 5942.390989473684 5199.930510526315 5940.901489473684 5201.439310526315C 5940.243289473684 5202.106110526315 5939.7601894736845 5202.973810526315 5939.7601894736845 5203.928710526315C 5939.7601894736845 5204.877010526315 5939.019989473684 5205.645710526315 5938.106789473684 5205.645710526315C 5936.246119473684 5205.645710526315 5934.385449473684 5205.645710526315 5932.524779473684 5205.645710526315C 5931.611609473684 5205.645710526315 5930.871349473684 5204.877010526315 5930.871349473684 5203.928710526315C 5930.871349473684 5202.973810526315 5930.388339473684 5202.106110526315 5929.7300894736845 5201.439310526315C 5928.240619473684 5199.930510526315 5927.315789473684 5197.823410526315 5927.315789473684 5195.491900526315Z"></path>-->
+                <!--                            <defs></defs>-->
+                <!--                        </svg>-->
+                <!--                    </div>-->
+                <!--                    <div>-->
+                <!--                        <b>Midjourney + ChatGPT –</b>-->
+                <!--                        идеи и визуалы-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="skills-el">-->
+                <!--                    <div class="skills-img">-->
+                <!--                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="5925.31591796875 5185.18408203125 20 28"-->
+                <!--                             data-guides="{&quot;vertical&quot;:[],&quot;horizontal&quot;:[]}">-->
+                <!--                            <path fill="none" stroke="white" fill-opacity="1" stroke-width="2" stroke-opacity="1"-->
+                <!--                                  font-size-adjust="none" stroke-linecap="round" id="tSvg16877b1a03c" title="Path 2"-->
+                <!--                                  d="M 5931.760229473684 5208.415010526315 C 5934.130616140351 5208.415010526315 5936.501002807017 5208.415010526315 5938.871389473684 5208.415010526315M 5932.649119473685 5211.184210526315 C 5934.426909473684 5211.184210526315 5936.204699473684 5211.184210526315 5937.982489473684 5211.184210526315M 5927.315789473684 5195.491900526315 C 5927.315789473684 5190.903690526315 5930.897509473684 5187.184210526315 5935.315789473684 5187.184210526315C 5939.734089473684 5187.184210526315 5943.315789473684 5190.903690526315 5943.315789473684 5195.491900526315C 5943.315789473684 5197.823310526315 5942.390989473684 5199.930510526315 5940.901489473684 5201.439310526315C 5940.243289473684 5202.106110526315 5939.7601894736845 5202.973810526315 5939.7601894736845 5203.928710526315C 5939.7601894736845 5204.877010526315 5939.019989473684 5205.645710526315 5938.106789473684 5205.645710526315C 5936.246119473684 5205.645710526315 5934.385449473684 5205.645710526315 5932.524779473684 5205.645710526315C 5931.611609473684 5205.645710526315 5930.871349473684 5204.877010526315 5930.871349473684 5203.928710526315C 5930.871349473684 5202.973810526315 5930.388339473684 5202.106110526315 5929.7300894736845 5201.439310526315C 5928.240619473684 5199.930510526315 5927.315789473684 5197.823410526315 5927.315789473684 5195.491900526315Z"></path>-->
+                <!--                            <defs></defs>-->
+                <!--                        </svg>-->
+                <!--                    </div>-->
+                <!--                    <div>-->
+                <!--                        <b>Midjourney + ChatGPT –</b>-->
+                <!--                        идеи и визуалы-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="skills-el">-->
+                <!--                    <div class="skills-img">-->
+                <!--                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="5925.31591796875 5185.18408203125 20 28"-->
+                <!--                             data-guides="{&quot;vertical&quot;:[],&quot;horizontal&quot;:[]}">-->
+                <!--                            <path fill="none" stroke="white" fill-opacity="1" stroke-width="2" stroke-opacity="1"-->
+                <!--                                  font-size-adjust="none" stroke-linecap="round" id="tSvg16877b1a03c" title="Path 2"-->
+                <!--                                  d="M 5931.760229473684 5208.415010526315 C 5934.130616140351 5208.415010526315 5936.501002807017 5208.415010526315 5938.871389473684 5208.415010526315M 5932.649119473685 5211.184210526315 C 5934.426909473684 5211.184210526315 5936.204699473684 5211.184210526315 5937.982489473684 5211.184210526315M 5927.315789473684 5195.491900526315 C 5927.315789473684 5190.903690526315 5930.897509473684 5187.184210526315 5935.315789473684 5187.184210526315C 5939.734089473684 5187.184210526315 5943.315789473684 5190.903690526315 5943.315789473684 5195.491900526315C 5943.315789473684 5197.823310526315 5942.390989473684 5199.930510526315 5940.901489473684 5201.439310526315C 5940.243289473684 5202.106110526315 5939.7601894736845 5202.973810526315 5939.7601894736845 5203.928710526315C 5939.7601894736845 5204.877010526315 5939.019989473684 5205.645710526315 5938.106789473684 5205.645710526315C 5936.246119473684 5205.645710526315 5934.385449473684 5205.645710526315 5932.524779473684 5205.645710526315C 5931.611609473684 5205.645710526315 5930.871349473684 5204.877010526315 5930.871349473684 5203.928710526315C 5930.871349473684 5202.973810526315 5930.388339473684 5202.106110526315 5929.7300894736845 5201.439310526315C 5928.240619473684 5199.930510526315 5927.315789473684 5197.823410526315 5927.315789473684 5195.491900526315Z"></path>-->
+                <!--                            <defs></defs>-->
+                <!--                        </svg>-->
+                <!--                    </div>-->
+                <!--                    <div>-->
+                <!--                        <b>Midjourney + ChatGPT –</b>-->
+                <!--                        идеи и визуалы-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="skills-el">-->
+                <!--                    <div class="skills-img">-->
+                <!--                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="5925.31591796875 5185.18408203125 20 28"-->
+                <!--                             data-guides="{&quot;vertical&quot;:[],&quot;horizontal&quot;:[]}">-->
+                <!--                            <path fill="none" stroke="white" fill-opacity="1" stroke-width="2" stroke-opacity="1"-->
+                <!--                                  font-size-adjust="none" stroke-linecap="round" id="tSvg16877b1a03c" title="Path 2"-->
+                <!--                                  d="M 5931.760229473684 5208.415010526315 C 5934.130616140351 5208.415010526315 5936.501002807017 5208.415010526315 5938.871389473684 5208.415010526315M 5932.649119473685 5211.184210526315 C 5934.426909473684 5211.184210526315 5936.204699473684 5211.184210526315 5937.982489473684 5211.184210526315M 5927.315789473684 5195.491900526315 C 5927.315789473684 5190.903690526315 5930.897509473684 5187.184210526315 5935.315789473684 5187.184210526315C 5939.734089473684 5187.184210526315 5943.315789473684 5190.903690526315 5943.315789473684 5195.491900526315C 5943.315789473684 5197.823310526315 5942.390989473684 5199.930510526315 5940.901489473684 5201.439310526315C 5940.243289473684 5202.106110526315 5939.7601894736845 5202.973810526315 5939.7601894736845 5203.928710526315C 5939.7601894736845 5204.877010526315 5939.019989473684 5205.645710526315 5938.106789473684 5205.645710526315C 5936.246119473684 5205.645710526315 5934.385449473684 5205.645710526315 5932.524779473684 5205.645710526315C 5931.611609473684 5205.645710526315 5930.871349473684 5204.877010526315 5930.871349473684 5203.928710526315C 5930.871349473684 5202.973810526315 5930.388339473684 5202.106110526315 5929.7300894736845 5201.439310526315C 5928.240619473684 5199.930510526315 5927.315789473684 5197.823410526315 5927.315789473684 5195.491900526315Z"></path>-->
+                <!--                            <defs></defs>-->
+                <!--                        </svg>-->
+                <!--                    </div>-->
+                <!--                    <div>-->
+                <!--                        <b>Midjourney + ChatGPT –</b>-->
+                <!--                        идеи и визуалы-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="skills-el">-->
+                <!--                    <div class="skills-img">-->
+                <!--                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="5925.31591796875 5185.18408203125 20 28"-->
+                <!--                             data-guides="{&quot;vertical&quot;:[],&quot;horizontal&quot;:[]}">-->
+                <!--                            <path fill="none" stroke="white" fill-opacity="1" stroke-width="2" stroke-opacity="1"-->
+                <!--                                  font-size-adjust="none" stroke-linecap="round" id="tSvg16877b1a03c" title="Path 2"-->
+                <!--                                  d="M 5931.760229473684 5208.415010526315 C 5934.130616140351 5208.415010526315 5936.501002807017 5208.415010526315 5938.871389473684 5208.415010526315M 5932.649119473685 5211.184210526315 C 5934.426909473684 5211.184210526315 5936.204699473684 5211.184210526315 5937.982489473684 5211.184210526315M 5927.315789473684 5195.491900526315 C 5927.315789473684 5190.903690526315 5930.897509473684 5187.184210526315 5935.315789473684 5187.184210526315C 5939.734089473684 5187.184210526315 5943.315789473684 5190.903690526315 5943.315789473684 5195.491900526315C 5943.315789473684 5197.823310526315 5942.390989473684 5199.930510526315 5940.901489473684 5201.439310526315C 5940.243289473684 5202.106110526315 5939.7601894736845 5202.973810526315 5939.7601894736845 5203.928710526315C 5939.7601894736845 5204.877010526315 5939.019989473684 5205.645710526315 5938.106789473684 5205.645710526315C 5936.246119473684 5205.645710526315 5934.385449473684 5205.645710526315 5932.524779473684 5205.645710526315C 5931.611609473684 5205.645710526315 5930.871349473684 5204.877010526315 5930.871349473684 5203.928710526315C 5930.871349473684 5202.973810526315 5930.388339473684 5202.106110526315 5929.7300894736845 5201.439310526315C 5928.240619473684 5199.930510526315 5927.315789473684 5197.823410526315 5927.315789473684 5195.491900526315Z"></path>-->
+                <!--                            <defs></defs>-->
+                <!--                        </svg>-->
+                <!--                    </div>-->
+                <!--                    <div>-->
+                <!--                        <b>Midjourney + ChatGPT –</b>-->
+                <!--                        идеи и визуалы-->
+                <!--                    </div>-->
+                <!--                </div>-->
+
+                <!--            </div>-->
+            </div>
+        </section>
+
+        <div id="sec6" class="where">
+            <div class="container">
+                <h2>Где ты сможешь применять AI-дизайн и сколько это приносит?</h2>
+                <div style="position: relative;margin-top: 55px">
+                    <div class="mainBlock-video-tag sm">
+                        Смотри видеоработы
+                    </div>
+                    <div class="instSwiper withPreview">
+                        <div class="where-el">
+                            <div class="where-img">
+                                <div class="where-preview">
+                                    <img data-lazy-src="./images/ws_7.png" src="" class="lazy-img" alt="">
+                                </div>
+                            </div>
+                            <div class="where-title">
+                                Оформление карточек товаров без съемок, обложек товаров, баннеров, лукбуков.
+                            </div>
+                            <div class="where-tag">
+                                Экономия до 50 000 ₽ на продакшне
+                            </div>
+                            <div class="where-subtitle">Как это работает:</div>
+
+                            <ul>
+                                <li>Генерируй реалистичные товарные фотографии без фотосессий</li>
+                                <li>Создавай стильные AI-изображения для карточек Wildberries и Ozon</li>
+                                <li>Улучшай качество фото и делай профессиональную ретушь в один клик</li>
+                            </ul>
+
+                            <div class="where-price">
+                                <div>
+                                    Стоимость услуг фрилансеров:
+                                </div>
+                                <div><span>1 000 ₽</span> за карточку</div>
+                            </div>
+                        </div>
+                        <div class="where-el">
+                            <div class="where-img">
+                                <div class="where-preview">
+                                    <img data-lazy-src="./images/ww_10.png" class="lazy-img" src="" alt="">
+
+                                </div>
+                            </div>
+                            <div class="where-title">
+                                Контент для блогеров<br>
+                                и коммерческих съемок
+                            </div>
+                            <div class="where-tag">
+                                Экономия до 30 000 ₽ на продакшне
+                            </div>
+                            <div class="where-subtitle">Как это работает:</div>
+
+                            <ul>
+                                <li>Генерируй AI-фоны, одежду, спецэффекты – без аренды студии</li>
+                                <li>Создавай динамичные AI-анимации для рекламных роликов</li>
+                                <li>Быстро подстраивай референсы под запрос клиента</li>
+                                <li>AI-анимации для Reels, YouTube Shorts, TikTok.</li>
+                            </ul>
+
+                            <div class="where-price">
+                                <div>
+                                    Стоимость услуг:
+                                </div>
+                                <div><span>от 15 000 ₽</span></div>
+                            </div>
+                        </div>
+                        <div class="where-el">
+                            <div class="where-img">
+                                <div class="where-preview">
+                                    <img data-lazy-src="./images/ws_8.png" class="lazy-img" src="" alt="">
+                                </div>
+                            </div>
+                            <div class="where-title">
+                                Digital-контент для <br> брендов и компаний
+                            </div>
+                            <div class="where-tag">
+                                Экономия 50 000–150 000 ₽ на digital-дизайн:
+                            </div>
+                            <div class="where-subtitle">Как это работает:</div>
+
+                            <ul>
+                                <li>Дизайн digital-экранов для мероприятий и презентаций</li>
+                                <li>Создание анимированного контента для социальных сетей и рекламы</li>
+                                <li>AI-генерация уникальных графических стилей под бренд</li>
+                            </ul>
+
+                            <div class="where-price">
+                                <div>
+                                    Заработок дизайнеров на AI-контенте:
+                                </div>
+                                <div><span>от 25 000 ₽</span>за один проект</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container" id="sec2">
+                <div class="examples">
+                    <h2>Видеопримеры работ спикеров</h2>
+
+                    <div class="examples-swiper">
+                        <div class="examples-swiper-preview">
+                            <div class="where-img"></div>
+                            <div class="where-img"></div>
+                            <div class="where-img"></div>
+                            <div class="where-img"></div>
+                        </div>
+                    </div>
+                    <img src="" data-lazy-src="./images/it_3.png" class="it it_2 lazy-img" alt="">
+
+                </div>
+            </div>
+
+            <div class="container prov">
+                <h2>Твой проводник <br/>в мир AI-дизайна</h2>
+                <div class="profile">
+                    <div class="profile__photo">
+                        <img class="lazy-img" data-lazy-src="./images/profile.jpg" src="" alt="Халимончук Алена">
+                    </div>
+                    <div>
+                        <div class="profile__name">Ана Атаманова <br/> основатель NEURO AURA</div>
+                        <p class="profile__description">
+                            Помогаю людям и брендам создавать уникальный контент с нейросетями и раскрывать креативность
+                        </p>
+
+                        <p class="profile__highlight">
+                            6+ лет в digital-креативе, 4 года в нейросетях
+                        </p>
+                        <p class="profile__highlight">
+                            300+ брендов и блогеров, 350+ успешных кейсов
+                        </p>
+                        <p class="profile__highlight">
+                            Спикер digital-конференций, обучаю нейросетевому креативу
+                        </p>
+                        <hr class="profile__divider">
+
+                        <div class="profile__list">
+                            Автор курса NEURO VISION, эксперт по нейросетям, digital-консультант
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="howStart" id="sec4">
+            <div class="container">
+                <h2>Как проходит обучение</h2>
+                <img src="" data-lazy-src="./images/it_2.png" class="it it_4 lazy-img" alt="">
+
+                <div class="howStart-wrp">
+                    <div class="howStart-el">
+                        <div class="howStart-number">1</div>
+                        <div class="howStart-title">Оплачиваешь доступ к курсу</div>
+                        <img data-lazy-src="./images/zz/f_1.png" src="" class="lazy-img" style="transform: scale(1.1);margin-top: -10px"
+                             alt="">
+                    </div>
+                    <div class="howStart-el">
+                        <div class="howStart-number">2</div>
+                        <div class="howStart-title">На электроную почту приходит доступ к курсу</div>
+                        <img data-lazy-src="./images/zz/f_2.png" src="" class="lazy-img" alt="">
+                    </div>
+                    <div class="howStart-el">
+                        <div class="howStart-number">3</div>
+                        <div class="howStart-title">Смотришь уроки на нашей платформе</div>
+                        <img data-lazy-src="./images/zz/f_3.png" class="lazy-img" src="" alt="">
+                    </div>
+                    <div class="howStart-el">
+                        <div class="howStart-number">4</div>
+                        <div class="howStart-title">Выполняешь домашки под каждым уроком</div>
+                        <img data-lazy-src="./images/zz/f_4.png" src="" class="lazy-img" alt="">
+                    </div>
+                    <div class="howStart-el">
+                        <div class="howStart-number">5</div>
+                        <div class="howStart-title">Получаешь обратную связь от преподавателя</div>
+                        <img data-lazy-src="./images/zz/f_5.png" src="" class="lazy-img" alt="">
+                    </div>
+                    <div class="howStart-el">
+                        <div class="howStart-number">6</div>
+                        <div class="howStart-title">Общаешься с единомышленниками</div>
+                        <img data-lazy-src="./images/zz/f_6.png" src="" class="lazy-img" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sec5">
+            <div class="container" >
+                <div class="students">
+                    <h2>Видеопримеры работ учеников</h2>
+
+                    <div class="student-swiper">
+                        <div class="examples-swiper-preview">
+                            <div class="where-img"></div>
+                            <div class="where-img"></div>
+                            <div class="where-img"></div>
+                            <div class="where-img"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews" id="sec1">
+            <div class="container">
+                <h2>Отзывы</h2>
+                <div class="reviews-swiper withPreview">
+                    <div class="reviews-slide-item">
+                        <div>
+                            <div class="review-slide-name">Сергей, 31 лет</div>
+                            <div class="review-slide-text">
+                                "Честно, я думал, что это будет сложняк какой-то, но оказалось, что вообще не так. Всё
+                                просто, понятное объяснение, никаких заморочек. Теперь для бизнеса делаю крутые видео и
+                                контент."
+                            </div>
+                        </div>
+                        <div><img class="reviews-slide-image lazy-img" src="" data-lazy-src="./images/reviews/rev_2.jpg" alt=""></div>
+                    </div>
+                    <div class="reviews-slide-item">
+                        <div>
+                            <div class="review-slide-name">Марина, 32 года</div>
+                            <div class="review-slide-text">
+                                "Я думала, что такие вещи только для профессионалов, а тут прям доступно и понятно всё.
+                                Уроки прям по делу, без воды. Теперь делаю стильный контент для соцсетей, и это кайф!"
+                            </div>
+                        </div>
+                        <div><img class="reviews-slide-image lazy-img" src="" data-lazy-src="./images/reviews/rev_3.jpg" alt=""></div>
+                    </div>
+                </div>
+                <img src="" data-lazy-src="./images/it_4.png" class="it it_3 lazy-img" alt="">
+
+            </div>
+        </section>
+
+        <section class="tariffs" id="tariffs">
+            <div class="container">
+                <h2>Тарифы</h2>
+                <div class="tariffs-title">
+                    Курс стартует:
+                </div>
+                <div class="tariffs-subtitle">
+                    Осталось всего 24/200 мест на курсе!
+                </div>
+                <div class="tariffs-box">
+                    <div class="tariffs-el">
+                        <div class="tariffs-el-title">Базовый</div>
+                        <div class="tariffs-el-price">20 $</div>
+                        <div class="tariffs-el-line">
+                            <div class="tariffs-el-price_2">
+                                10 $
+                            </div>
+                            <div class="tariffs-tag">50% скидка</div>
+                        </div>
+                        <div class="tariffs-ps">
+                            Для тех, кто хочет <b>освоить AI-дизайн и анимацию с нуля</b>
+                        </div>
+                        <ul class="tariffs-list">
+                            <li>Урок 1: Молниеносная генерация идей и сценариев. Больше не тратьте часы на поиск
+                                вдохновения!
+                            </li>
+                            <li>Урок 2: Освойте секреты написания мощных промтов и получайте желаемый результат с
+                                первого
+                                раза.
+                            </li>
+                            <li>Урок 3: Научитесь создавать уникальный визуальный контент без дизайнера.</li>
+                            <li>Урок 4: AI-магия в действии! Создаем изображения и превращаем их в анимационные видео.
+                            </li>
+                            <li>Урок 5: Повторяем тренды AI-анимации и выделяемся среди конкурентов.</li>
+                            <li>Урок 6: Озвучка и музыка – разбираем трендовые AI-инструменты для звука.</li>
+                            <li>Урок 7: Создаем цифрового аватара, который будет работать за вас!</li>
+                            <li>Урок 8: Финальный проект – ваш собственный анимационный ролик!</li>
+                        </ul>
+                        <ul class="tariffs-list-plus">
+                            <li class="close">Урок 9: Нейрофотосессии – тренд 2025 года! Узнайте, как создать
+                                профессиональные фото без фотографа.
+                            </li>
+                            <li>Конспект всех уроков остается навсегда</li>
+                            <li>Личная проверка голосовыми сообщениями</li>
+                            <li>Разбор итоговой работы</li>
+                            <li class="close">Гайд “AI-деньги” – пошаговый план, как монетизировать навыки работы с
+                                AI.
+                            </li>
+                            <li class="text-decor-none">Доступ к курсу 14 дней</li>
+                        </ul>
+                        <a href="/ru/app/buy/10" class="btn">Начать учиться сейчас</a>
+                    </div>
+                    <div class="tariffs-el">
+                        <div class="tariffs-el-title">Продвинутый <img src="" data-lazy-src="./images/prem.png" class="lazy-img" alt=""></div>
+                        <div class="tariffs-el-price">30 $</div>
+                        <div class="tariffs-el-line">
+                            <div class="tariffs-el-price_2">
+                                15 $
+                            </div>
+                            <div class="tariffs-tag">50% скидка</div>
+                        </div>
+                        <div class="tariffs-ps">
+                            Для тех, кто хочет <b>освоить AI-дизайн и анимацию с нуля</b>
+                        </div>
+                        <ul class="tariffs-list">
+                            <li>Урок 1: Молниеносная генерация идей и сценариев. Больше не тратьте часы на поиск
+                                вдохновения!
+                            </li>
+                            <li>Урок 2: Освойте секреты написания мощных промтов и получайте желаемый результат с
+                                первого
+                                раза.
+                            </li>
+                            <li>Урок 3: Научитесь создавать уникальный визуальный контент без дизайнера.</li>
+                            <li>Урок 4: AI-магия в действии! Создаем изображения и превращаем их в анимационные видео.
+                            </li>
+                            <li>Урок 5: Повторяем тренды AI-анимации и выделяемся среди конкурентов.</li>
+                            <li>Урок 6: Озвучка и музыка – разбираем трендовые AI-инструменты для звука.</li>
+                            <li>Урок 7: Создаем цифрового аватара, который будет работать за вас!</li>
+                            <li>Урок 8: Финальный проект – ваш собственный анимационный ролик!</li>
+                        </ul>
+                        <ul class="tariffs-list-plus">
+                            <li class="close">Урок 9: Нейрофотосессии – тренд 2025 года! Узнайте, как создать
+                                профессиональные фото без фотографа.
+                            </li>
+                            <li>Конспект всех уроков остается навсегда</li>
+                            <li>Личная проверка голосовыми сообщениями</li>
+                            <li>Разбор итоговой работы</li>
+                            <li class="close">Гайд “AI-деньги” – пошаговый план, как монетизировать навыки работы с
+                                AI.
+                            </li>
+                            <li>Доступ к курсу 14 дней</li>
+                        </ul>
+                        <a href="/ru/app/buy/15" class="btn">Начать учиться сейчас</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq" id="sec3">
+            <div class="container">
+                <h2>Часто задаваемые вопросы</h2>
+                <div class="faq-box">
+
+                </div>
+                <script>
+                  const faq = [
+                    {
+                      title: "Я не разбираюсь в нейросетях.<br class='mob'/> Смогу ли я освоить курс?",
+                      text: `
+                    <div>Да, и это проще, чем кажется! <br/>
+Курс подходит даже для тех, кто впервые слышит про нейросети.  Мы объясняем всё простыми словами и показываем каждый шаг на практике. Уже с первого урока ты начнёшь создавать AI-изображения, а к концу курса — сделаешь свою собственную анимацию. Ты не просто разберёшься в нейросетях, а научишься применять их в дизайне и анимации!</div>
+                    <div>🎯 Что в итоге?  Ты не просто разберёшься в нейросетях, а научишься использовать их в дизайне и анимации для крутых проектов и личных задач!</div>
+                  `
+                    },
+                    {
+                      title: "Я уже дизайнер.<br class='mob'/> Что даст мне этот курс?",
+                      text: `
+                    <div>Этот курс — твой личный ускоритель в мире дизайна и повышения уровня твоих проектов! Ты научишься мгновенно создавать референсы, анимации, озвучку и трендовые эффекты, тратя минуты вместо часов. Нейросети не заменят твоё творчество, но сделают его в разы продуктивнее.</div>
+                    <div>🎯 Что в итоге? Ты быстрее закрываешь задачи, берёшь больше заказов, увеличиваешь доход и создаёшь проекты, от которых в восторге клиенты!</div>
+                  `
+                    },
+                    {
+                      title: "Смогу ли я зарабатывать на AI-анимации?",
+                      text: `
+                    <div>Да! 🚀 В курсе ты освоишь реальные инструменты, которые уже используют дизайнеры и бренды.</div>
+                    <ul>
+                    <li>🔹 Научишься создавать AI-анимацию, которая продаётся.</li>
+                    <li>🔹 Разберёшься, как применять нейросети в коммерческих проектах и работать с клиентами.</li>
+                    <li>🔹 Освоишь востребованные технологии – клиенты готовы платить за них уже сейчас!</li>
+                    </ul>
+                    <div>💰 Начни монетизировать свои навыки и зарабатывай на AI прямо во время обучения!</div>
+                  `
+                    },
+                    {
+                      title: "Что входит в продвинутый тариф и чем он лучше?",
+                      text: `
+                    <div>В базовом тарифе ты получаешь полный доступ к курсу и всем материалам. Но если хочешь максимальный результат, выбирай продвинутый тариф – он прокачает твои навыки на 100%!</div>
+                    <ul>
+                    <li>✅  Разбор всех домашних заданий с персональной обратной связью.</li>
+                    <li>✅ Кураторы помогут исправить ошибки и улучшить твои работы.</li>
+                    <li>✅ Детальный разбор итогового проекта – получишь конкретные рекомендации по улучшению анимации.</li>
+                    </ul>
+                    <div>+ БОНУСЫ: </div>
+                    <div>🔹 Эксклюзивный урок по нейрофотосессии – тренд, который сейчас взрывает рынок! Ты научишься создавать стильные AI-фото, которые выглядят как настоящие студийные съемки.</div>
+                    <div>🔹 Гайд «AI-деньги» – готовая стратегия, как монетизировать навыки работы с нейросетями.</div>
+                    <div>🚀 Если хочешь не просто освоить AI, а делать мощные работы и монетизировать свои навыки – продвинутый тариф для тебя!</div>
+                  `
+                    },
+                    {
+                      title: "Сколько времени займёт обучение?",
+                      text: `
+                    <div>Всего 4 часа, и ты уже создаёшь AI-дизайн и анимацию! 🚀</div>
+                    <ul>
+                    <li>🔹 8 мощных уроков + практика — освоишь все ключевые инструменты без воды.</li>
+                    <li>🔹 В продвинутом тарифе получишь персональный разбор своих работ и рекомендации.</li>
+                    <li>🔹 Быстрый результат — не нужно тратить месяцы, уже через несколько дней практики и  ты уверенно работаешь с AI!</li>
+                    </ul>
+                  `
+                    },
+                    {
+                      title: "Что будет, если я не успею пройти курс за 14 дней?",
+                      text: `
+                    <div>В любой момент ты можешь продлить обучение.</div>
+                  `
+                    },
+                    {
+                      title: "Как проходит обучение?",
+                      text: `
+                    <div>🔹 Видео-уроки с пошаговыми объяснениями – всё понятно даже новичку.</div>
+                    <div>🔹 Практика в каждом уроке – сразу применяешь знания, а не просто смотришь.</div>
+                    <div>🔹 В продвинутом тарифе кураторы разбирают твои работы и дают ценные рекомендации.</div>
+                    <div>🔹 Поддержка в Telegram-чате – задавай вопросы, получай помощь и общайся с единомышленниками.</div>
+                    <div>Ты не просто изучаешь AI, ты с сразу создаёшь анимации и реальные проекты! 🚀🔥</div>
+                  `
+                    },
+                    {
+                      title: "Как получить скидку?",
+                      text: `
+                    <div>🔥 Скидка 50% действует только 3 часа после захода на страницу! Потом цена увеличится – не упусти шанс сэкономить.</div>
+                    <div>Лучшее время начать – прямо сейчас! 🚀 Выбирай тариф и стартуй обучение!</div>
+                  `
+                    },
+                    {
+                      title: "Бесплатные ли нейросети?",
+                      text: `
+                  <div>Мы протестировали более 100 нейросетей и отобрали лучшие бесплатные сервисы, которые практически не уступают платным.</div>
+                  <ul>
+                  <li>🔹 В курсе ты научишься работать с бесплатными инструментами и использовать максимум возможностей без вложений.</li>
+                  <li>🔹 Также разберём платные нейросети – покажем, какие из них действительно стоят своих денег и как работать с их премиум-функциями.</li>
+                  </ul>
+
+                  <div>Ты сам решишь, какие инструменты подходят именно тебе!</div>
+                  `
+                    },
+                    {
+                      title: "Можно ли оплачивать нейросети российскими картами?",
+                      text: `
+                    <div>Да, можно! Для этого просто выбери способ оплаты «Платежи с России в RUB» – и оплата пройдет без проблем. 🚀</div>
+                  `
+                    },
+                  ];
+                  const faqBlock = document.querySelector('.faq-box')
+                  const createFaqBlock = () => {
+                    const template = (title, text) => {
+                      return `<div class="faq-item active">
+                    <div class="faq-item-head">
+                        <div>${title}</div>
+                        <div class="faq-item-close"><img src="./images/close.svg" alt=""></div>
+                    </div>
+                    <div class="faq-item-body">
+                        ${text}
+                    </div>
+                </div>`
+                    }
+
+
+                    faq.forEach(item => {
+                      faqBlock.insertAdjacentHTML('beforeend', template(item.title, item.text))
+                    })
+
+                    const els = document.querySelectorAll('.faq-item')
+                    els.forEach(el => {
+                      el.addEventListener('click', function () {
+                        this.classList.toggle('active')
+                      })
+                    })
+                  }
+
+                  createFaqBlock()
+                </script>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                © Все права защищены <br/>
+                Контакты: <br/>
+                Электронная почта: <a href="mailto:neuro.aura@mail.ru">neuro.aura@mail.ru</a> <br/>
+                <br/>
+                Реквизиты: <br/>
+                ИНН 163902289299 <br/>
+
+                <a href="/en/docs/offers" class="footer-link"
+                   style="margin-bottom: 4px;padding: 5px; display: block;cursor: pointer">Оферта</a>
+                <a href="/en/docs/conf" class="footer-link" style="padding: 5px;display: block;cursor: pointer">Политика
+                    конфидециальности</a>
+            </div>
+
+        </footer>
+        <br><br>
+    </div>
+</div>
+<script>
+  let swiperInitialized = false;
+  const swiperPreview = document.querySelector('.examples-swiper-preview');
+  const examplesSwiper = document.querySelector('.examples-swiper');
+  const instSwiper = document.querySelector('.instSwiper')
+  const reviewsSwiper = document.querySelector('.reviews-swiper')
+  const studentSwiper = document.querySelector('.student-swiper')
+  const studentSwiperPreview = document.querySelector('.student-swiper-preview')
+  const body = document.querySelector('body')
+  const mainBtn = document.querySelector('.mainBtn')
+  const mainBtnText = mainBtn.textContent
+  mainBtn.addEventListener('click', function (e) {
+    this.innerHTML = 'Загрузка...';
+  })
+
+  function InitSwipers(to) {
+    return new Promise((resolve, reject) => {
+      if (swiperInitialized) {
+        return resolve(); // Если Swiper уже загружен, сразу завершаем промис
+      }
+
+      const lazyImgs = document.querySelectorAll('.lazy-img');
+      if (lazyImgs.length) {
+        lazyImgs.forEach(img => {
+          const src = img.getAttribute('data-lazy-src');
+          if (src) {
+            img.setAttribute('src', src);
+          }
+        });
+      }
+
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
+      document.head.appendChild(link);
+
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
+
+
+      script.onload = () => {
+        // Удаляем превью
+        if (swiperPreview) swiperPreview.remove();
+        if (studentSwiperPreview) studentSwiperPreview.remove();
+        if (instSwiper) {
+          instSwiper.innerHTML = ''
+          instSwiper.classList.remove('withPreview')
+          instSwiper.insertAdjacentHTML('beforeend', `
+                          <div class="swiper inst-swiper">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide examples-slide">
+                                <div class="where-el">
+                                    <div class="where-img">
+                                        <div class="where-preview">
+                                            <img data-video="./images/how_1.mp4" src="./images/ws_1.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="where-title">
+                                        Рекламные AI-видеоролики
+                                    </div>
+                                    <div class="where-tag">
+                                         Экономия: до 100 000 ₽ на видеопродакшене
+                                    </div>
+                                    <div class="where-subtitle">Как это работает:</div>
+
+                                    <ul>
+                                        <li>Генерация видеороликов без съёмок (анимации, 3D-модели, AI-герои)</li>
+                                        <li> AI-анимация текста, графики и персонажей для рекламы</li>
+                                        <li>Подбор стилей, цветов, шрифтов под фирменный стиль</li>
+                                    </ul>
+
+                                    <div class="where-price">
+                                        <div>
+                                             Заработок специалистов:
+                                        </div>
+                                        <div>от <span>25 000 ₽</span> за 1 рекламный ролик</div>
+                                    </div>
+                                     </div>
+                                </div>
+                             <div class="swiper-slide examples-slide">
+                                <div class="where-el">
+                                    <div class="where-img">
+                                        <div class="where-preview">
+                                            <img data-video="./images/how_8.mp4" src="./images/ws_7.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="where-title">
+Оформление карточек товаров без съемок, обложек товаров, баннеров, лукбуков.
+                                    </div>
+                                    <div class="where-tag">
+Экономия до 50 000 ₽ на продакшне
+                                    </div>
+                                    <div class="where-subtitle">Как это работает:</div>
+
+                                    <ul>
+                                        <li>Генерируй реалистичные товарные фотографии без фотосессий</li>
+                                        <li>Создавай стильные AI-изображения для карточек Wildberries и Ozon</li>
+                                        <li>Улучшай качество фото и делай профессиональную ретушь в один клик</li>
+                                    </ul>
+
+                                    <div class="where-price">
+                                        <div>
+Стоимость услуг фрилансеров:
+                                        </div>
+                                        <div><span>1 000 ₽</span> за карточку</div>
+                                    </div>
+                                     </div>
+                                </div>
+                                <div class="swiper-slide examples-slide">
+                                <div class="where-el">
+                                    <div class="where-img">
+                                        <div class="where-preview">
+                                            <img data-video="./images/ww_10.mp4" src="./images/ww_10.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="where-title">
+Контент для блогеров<br/>
+и коммерческих съемок
+                                    </div>
+                                    <div class="where-tag">
+Экономия до 30 000 ₽ на продакшне
+                                    </div>
+                                    <div class="where-subtitle">Как это работает:</div>
+
+                                    <ul>
+                                        <li>Генерируй AI-фоны, одежду, спецэффекты – без аренды студии</li>
+                                        <li>Создавай динамичные AI-анимации для рекламных роликов</li>
+                                        <li>Быстро подстраивай референсы под запрос клиента</li>
+                                        <li>AI-анимации для Reels, YouTube Shorts, TikTok.</li>
+                                    </ul>
+
+                                    <div class="where-price">
+                                        <div>
+Стоимость услуг:
+                                        </div>
+                                        <div><span>от 15 000 ₽</span></div>
+                                    </div>
+                                     </div>
+                                </div>
+                                <div class="swiper-slide examples-slide">
+                                <div class="where-el">
+                                    <div class="where-img">
+                                        <div class="where-preview">
+                                            <img data-video="./images/how_7.mp4" src="./images/ws_8.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="where-title">
+Digital-контент для <br/> брендов и компаний
+                                    </div>
+                                    <div class="where-tag">
+Экономия 50 000–150 000 ₽ на digital-дизайн:
+                                    </div>
+                                    <div class="where-subtitle">Как это работает:</div>
+
+                                    <ul>
+                                        <li>Дизайн digital-экранов для мероприятий и презентаций</li>
+                                        <li>Создание анимированного контента для социальных сетей и рекламы</li>
+                                        <li>AI-генерация уникальных графических стилей под бренд</li>
+                                    </ul>
+
+                                    <div class="where-price">
+                                        <div>
+Заработок дизайнеров на AI-контенте:
+                                        </div>
+                                        <div><span>от 25 000 ₽</span>за один проект</div>
+                                    </div>
+                                     </div>
+                                </div>
+
+                             <div class="swiper-slide examples-slide">
+                                <div class="where-el">
+                                    <div class="where-img">
+                                        <div class="where-preview">
+                                            <img data-video="./images/how_2.mp4" src="./images/ws_2.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="where-title">
+                                        AI-арт и иллюстрации
+                                    </div>
+                                    <div class="where-tag">
+                                        Экономия: до 80 000 ₽ на создании авторского контента
+                                    </div>
+                                    <div class="where-subtitle">Как это работает:</div>
+
+                                    <ul>
+                                        <li>Создание уникальных AI-иллюстраций для упаковки, книг, сайтов, рекламы</li>
+                                        <li>Генерация стоковых изображений без лицензий и ограничений</li>
+                                        <li>Улучшение и стилизация<br/>  фото под бренд</li>
+                                    </ul>
+
+                                    <div class="where-price">
+                                        <div>
+                                            Заработок дизайнеров:
+                                        </div>
+                                        <div>от <span>10 000 ₽</span> за иллюстрацию</div>
+                                    </div>
+                                     </div>
+                                </div>
+                             <div class="swiper-slide examples-slide">
+                                <div class="where-el">
+                                    <div class="where-img">
+                                        <div class="where-preview">
+                                            <img data-video="./images/how_3.mp4" src="./images/ws_3.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="where-title">
+                                         AI-генерация брендинга и фирменного стиля
+                                    </div>
+                                    <div class="where-tag">
+                                        Экономия: до 300 000 ₽ на услугах дизайнеров
+                                    </div>
+                                    <div class="where-subtitle">Как это работает:</div>
+
+                                    <ul>
+                                        <li>Разработка логотипов, гайдлайнов, айдентики через AI</li>
+                                        <li>Автоматизированный подбор шрифтов, цветов, стилей</li>
+                                        <li>Генерация шаблонов для презентаций, соцсетей, упаковки</li>
+                                    </ul>
+
+                                    <div class="where-price">
+                                        <div>
+                                            Заработок дизайнеров:
+                                        </div>
+                                        <div>от <span>100 000 ₽</span> за бренд-пак</div>
+                                    </div>
+                                     </div>
+                                </div>
+                             </div>
+                            <div class="swiper-pagination swiper-pagination-inst"></div>
+                            <div class="swiper-button-prev swiper-button-prev-inst"></div>
+                            <div class="swiper-button-next swiper-button-next-inst"></div>
+                          </div>
+                          `)
+        }
+        if (examplesSwiper) {
+          examplesSwiper.innerHTML = ''
+          examplesSwiper.classList.remove('withPreview')
+          examplesSwiper.insertAdjacentHTML('beforeend', `
+              <div class="swiper examples-swiper-box">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide examples-slide">
+                        <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/ww_1.mp4" src="./images/ww_1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                  <div class="swiper-slide examples-slide">
+                      <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/ww_2.mp4" src="./images/ww_2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="swiper-slide examples-slide">
+                        <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/ww_3.mp4" src="./images/ww_3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                  <div class="swiper-slide examples-slide">
+                      <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/ww_4.mp4" src="./images/ww_4.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="swiper-slide examples-slide">
+                        <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/ww_5.mp4" src="./images/ww_5.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                  <div class="swiper-slide examples-slide">
+                      <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/ww_6.mp4" src="./images/ww_6.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="swiper-slide examples-slide">
+                        <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/ww_7.mp4" src="./images/ww_7.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                  <div class="swiper-slide examples-slide">
+                      <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/ww_8.mp4" src="./images/ww_8.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="swiper-slide examples-slide">
+                      <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/ww_9.mp4" src="./images/ww_9.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-ex"></div>
+                <div class="swiper-button-prev swiper-button-prev-ex"></div>
+                <div class="swiper-button-next swiper-button-next-ex"></div>
+              </div>
+            `);
+        }
+        if (studentSwiper) {
+          studentSwiper.innerHTML = ''
+          studentSwiper.classList.remove('withPreview')
+          studentSwiper.insertAdjacentHTML('beforeend', `
+              <div class="swiper studentSwiper-swiper-box">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide examples-slide">
+                        <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/stud/img_1.mp4" src="./images/stud/img_1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                  <div class="swiper-slide examples-slide">
+                      <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/stud/img_2.mp4" src="./images/stud/img_2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="swiper-slide examples-slide">
+                        <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/stud/img_3.mp4" src="./images/stud/img_3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                  <div class="swiper-slide examples-slide">
+                      <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/stud/img_4.mp4" src="./images/stud/img_4.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="swiper-slide examples-slide">
+                        <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/stud/img_5.mp4" src="./images/stud/img_5.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                  <div class="swiper-slide examples-slide">
+                      <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/stud/img_6.mp4" src="./images/stud/img_6.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                     <div class="swiper-slide examples-slide">
+                        <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/stud/img_7.mp4" src="./images/stud/img_7.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                  <div class="swiper-slide examples-slide">
+                      <div class="where-img">
+                             <div class="where-preview">
+                                <img data-video="./images/stud/img_8.mp4" src="./images/stud/img_8.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev swiper-button-prev-st"></div>
+                <div class="swiper-button-next swiper-button-next-st"></div>
+              </div>
+            `);
+        }
+
+        if (reviewsSwiper) {
+          reviewsSwiper.innerHTML = ''
+          reviewsSwiper.classList.remove('withPreview')
+          reviewsSwiper.insertAdjacentHTML('beforeend', `
+              <div class="swiper reviews-swiper-box">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide reviews-slide">
+                        <div class="reviews-slide-item">
+                        <div>
+                            <div class="review-slide-name">Сергей, 31 лет</div>
+                            <div class="review-slide-text">
+                                "Честно, я думал, что это будет сложняк какой-то, но оказалось, что вообще не так. Всё просто, понятное объяснение, никаких заморочек. Теперь для бизнеса делаю крутые видео и контент."
+                            </div>
+                        </div>
+                        <div><img class="reviews-slide-image" src="./images/reviews/rev_2.jpg" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide reviews-slide">
+                        <div class="reviews-slide-item">
+                            <div>
+                                <div class="review-slide-name">Марина, 32 года</div>
+                                <div class="review-slide-text">
+                                "Я думала, что такие вещи только для профессионалов, а тут прям доступно и понятно всё. Уроки прям по делу, без воды. Теперь делаю стильный контент для соцсетей, и это кайф!"
+                                </div>
+                            </div>
+                            <div><img class="reviews-slide-image" src="./images/reviews/rev_3.jpg" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide reviews-slide">
+                    <div class="reviews-slide-item">
+                        <div>
+                                <div class="review-slide-name">Анна, 22 лет</div>
+                                <div class="review-slide-text">
+                                    "Я реально не думала, что смогу создать такие крутые картинки и видео! После курса всё стало понятно, реально всё просто. Всё объясняется без лишней воды. Спасибо, Ана, за то, что показала, как это реально сделать! Теперь могу гордиться контентом, который сама сделала!"
+                                </div>
+                            </div>
+                            <div><img class="reviews-slide-image" src="./images/reviews/rev_1.jpg" alt=""></div>
+                        </div>
+                    </div>
+                     <div class="swiper-slide reviews-slide">
+                        <div class="reviews-slide-item">
+                            <div>
+                                <div class="review-slide-name">Александр, 29 лет</div>
+                                <div class="review-slide-text">
+                                "Записался на курс, чтобы что-то новое выучить, и не зря! Всё просто объяснялось, и результат был сразу виден. Я вообще не дизайнер, но теперь делаю крутые анимации для блога. В целом, круто! "
+                                </div>
+                            </div>
+                            <div><img class="reviews-slide-image" src="./images/reviews/rev_4.jpg" alt=""></div>
+                        </div>
+                    </div>
+                      <div class="swiper-slide reviews-slide">
+                        <div class="reviews-slide-item">
+                            <div>
+                                <div class="review-slide-name">
+                                Виктор, 28 лет
+</div>
+                                <div class="review-slide-text">
+                                "Никогда не думал, что смогу сам делать такие вещи! Курс реально крутой, всё объясняется пошагово, и результат просто потрясный! Уже создаю контент для инсты а. Всё супер!
+                                </div>
+                            </div>
+                            <div><img class="reviews-slide-image" src="./images/reviews/rev_6.jpg" alt=""></div>
+                        </div>
+                    </div>
+                      <div class="swiper-slide reviews-slide">
+                        <div class="reviews-slide-item">
+                            <div>
+                                <div class="review-slide-name">Екатерина, 27 лет</div>
+                                <div class="review-slide-text">
+                                "Я думала, что это слишком сложно для меня, но курс оказался реальным лайфхаком! Всё объясняется доступно, и теперь я сама делаю крутые визуалы. Спасибо тебе, Ана!"
+                                </div>
+                            </div>
+                            <div><img class="reviews-slide-image" src="./images/reviews/rev_8.jpg" alt=""></div>
+                        </div>
+                    </div>
+                      <div class="swiper-slide reviews-slide">
+                        <div class="reviews-slide-item">
+                            <div>
+                                <div class="review-slide-name">Ольга, 31 год</div>
+                                <div class="review-slide-text">
+                                "Я всегда считала, что для таких вещей надо специалистов звать, а теперь сама могу сделать качественный контент для Instagram! Всё так просто и круто!"
+                                </div>
+                            </div>
+                            <div><img class="reviews-slide-image" src="./images/reviews/rev_7.jpg" alt=""></div>
+                        </div>
+                    </div>
+                     <div class="swiper-slide reviews-slide">
+                        <div class="reviews-slide-item">
+                            <div>
+                                <div class="review-slide-name">Светлана, 24 лет</div>
+                                <div class="review-slide-text">
+                                "Я раньше считала, что такое только для профессионалов, но теперь сама делаю крутые фото и видео. Ана, ты меня реально вдохновила! "
+                                </div>
+                            </div>
+                            <div><img class="reviews-slide-image" src="./images/reviews/rev_5.jpg" alt=""></div>
+                        </div>
+                    </div>
+
+
+                </div>
+                 <div class="swiper-pagination swiper-pagination-rev"></div>
+                    <div class="swiper-button-prev swiper-button-prev-rev"></div>
+                    <div class="swiper-button-next swiper-button-next-rev"></div>
+              </div>
+               `)
+        }
+
+        new Swiper('.reviews-swiper-box', {
+          slidesPerView: 3, // Позволяет отображать количество слайдов в зависимости от их ширины
+          spaceBetween: 20,
+          preventClicks: false, // Отключаем автоматический переход по клику
+          preventClicksPropagation: false,
+          autoHeight: true,
+
+          breakpoints: {
+            // Когда ширина экрана меньше 768px (мобильные устройства)
+            0: {
+              slidesPerView: 1,
+            },
+            // Когда ширина экрана от 768px до 1024px (планшеты)
+            768: {
+              slidesPerView: 2,
+            },
+            // Когда ширина экрана больше 1024px (десктоп)
+            1024: {
+              slidesPerView: 2,
+            }
+          },
+          navigation: {
+            nextEl: '.swiper-button-next-rev',
+            prevEl: '.swiper-button-prev-rev',
+            clickable: true,
+          },
+        });
+
+        new Swiper('.inst-swiper', {
+          slidesPerView: 3, // Позволяет отображать количество слайдов в зависимости от их ширины
+          spaceBetween: 20,
+          preventClicks: false, // Отключаем автоматический переход по клику
+          preventClicksPropagation: false,
+          autoHeight: true,
+
+          breakpoints: {
+            // Когда ширина экрана меньше 768px (мобильные устройства)
+            0: {
+              slidesPerView: 1,
+            },
+            // Когда ширина экрана от 768px до 1024px (планшеты)
+            768: {
+              slidesPerView: 2,
+            },
+            // Когда ширина экрана больше 1024px (десктоп)
+            1024: {
+              slidesPerView: 3,
+            }
+          },
+          navigation: {
+            nextEl: '.swiper-button-next-inst',
+            prevEl: '.swiper-button-prev-inst',
+            clickable: true,
+          },
+        });
+        // Добавляем HTML-контент Swiper
+        new Swiper('.examples-swiper-box', {
+          slidesPerView: 4, // Позволяет отображать количество слайдов в зависимости от их ширины
+          spaceBetween: 20,
+          preventClicks: false, // Отключаем автоматический переход по клику
+          preventClicksPropagation: false,
+          pagination: {
+            el: '.swiper-pagination-ex',
+            clickable: true,
+          },
+          autoHeight: true,
+          breakpoints: {
+            // Когда ширина экрана меньше 768px (мобильные устройства)
+            0: {
+              slidesPerView: 1,
+            },
+            // Когда ширина экрана от 768px до 1024px (планшеты)
+            768: {
+              slidesPerView: 2,
+            },
+            // Когда ширина экрана больше 1024px (десктоп)
+            1024: {
+              slidesPerView: 4,
+            }
+          },
+          navigation: {
+            nextEl: '.swiper-button-next-ex',
+            prevEl: '.swiper-button-prev-ex',
+            clickable: true,
+          },
+        });
+
+
+        new Swiper('.studentSwiper-swiper-box', {
+          slidesPerView: 4, // Позволяет отображать количество слайдов в зависимости от их ширины
+          spaceBetween: 20,
+          preventClicks: false, // Отключаем автоматический переход по клику
+          preventClicksPropagation: false,
+          pagination: {
+            el: '.swiper-pagination-st',
+            clickable: true,
+          },
+          autoHeight: true,
+          breakpoints: {
+            // Когда ширина экрана меньше 768px (мобильные устройства)
+            0: {
+              slidesPerView: 1,
+            },
+            // Когда ширина экрана от 768px до 1024px (планшеты)
+            768: {
+              slidesPerView: 2,
+            },
+            // Когда ширина экрана больше 1024px (десктоп)
+            1024: {
+              slidesPerView: 4,
+            }
+          },
+          navigation: {
+            nextEl: '.swiper-button-next-st',
+            prevEl: '.swiper-button-prev-st',
+            clickable: true,
+          },
+        });
+
+
+        document.addEventListener('click', function (e) {
+          const preview = e.target.closest('.where-preview img');
+
+          const pauseAllVideosExcept = (currentVideo) => {
+            const allVideos = document.querySelectorAll('video');
+            allVideos.forEach(video => {
+              if (video !== currentVideo) {
+                video.pause();
+              }
+            });
+          };
+
+          if (preview) {
+            const vidSrc = preview.getAttribute('data-video');
+            const videoElement = document.createElement('video');
+            videoElement.src = vidSrc;
+            videoElement.controls = true;
+            videoElement.autoplay = true;
+            videoElement.style.width = '100%';
+
+            videoElement.addEventListener('play', () => pauseAllVideosExcept(videoElement));
+
+            const parentContainer = preview.closest('.where-img');
+            if (parentContainer) {
+              preview.remove();
+              parentContainer.appendChild(videoElement);
+              parentContainer.classList.add('hideButton')
+            }
+          }
+
+          // Если клик по видео или его управлению
+          const clickedVideo = e.target.closest('video');
+          if (clickedVideo) {
+            pauseAllVideosExcept(clickedVideo);
+          }
+        });
+
+
+        const examplesVideo = document.querySelectorAll('.examples-swiper video')
+        if (examplesVideo.length) {
+          examplesVideo.forEach(v => {
+            v.addEventListener('click', function (e) {
+              e.stopPropagation()
+              e.play()
+            })
+            v.addEventListener('play', function () {
+              examplesVideo.forEach(otherVideo => {
+                if (otherVideo !== v) {
+                  otherVideo.pause();
+                }
+              });
+            });
+          })
+        }
+
+        if (to) {
+          setTimeout(() => {
+            goTo(to)
+            mainBtn.innerHTML = mainBtnText
+          }, 1300)
+        }
+      };
+
+      document.head.appendChild(script);
+      swiperInitialized = true; // Блокируем повторную инициализацию
+      resolve();
+    })
+  }
+
+  body.addEventListener('scroll', function () {
+    InitSwipers()
+  });
+
+  const burger = document.querySelector('.burger')
+  const nav = document.querySelector('.header-nav')
+  burger.addEventListener('click', function () {
+    this.classList.toggle('active')
+    nav.classList.toggle('active')
+  })
+
+  document.querySelectorAll('.goTo').forEach(anchor => {
+    anchor.addEventListener('click', async function (e) {
+      e.preventDefault(); // Предотвращаем стандартное поведение ссылки
+
+      const targetId = this.getAttribute('href');
+      if (swiperInitialized) {
+        goTo(targetId)
+
+      } else {
+        InitSwipers(targetId)
+      }
+    });
+  });
+
+  function goTo(targetId) {
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      nav.classList.remove('active');
+      burger.classList.remove('active');
+
+      // Получаем позицию элемента относительно документа
+      const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+
+      console.log("Высота элемента:", targetElement.offsetHeight);
+      console.log("Позиция элемента:", elementPosition);
+
+      // Плавный скролл с помощью window.scrollTo
+      document.body.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  let tagsInited = false
+
+  addTrackingScripts()
+  function addTrackingScripts() {
+    if (tagsInited) {
+      return
+    }
+    // Добавляем Google Tag Manager в <head>
+    let gtmScript = document.createElement("script");
+    gtmScript.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TQKBLGGM');`;
+    document.head.prepend(gtmScript);
+
+    // Добавляем Google Tag Manager (noscript) в <body>
+    let gtmNoscript = document.createElement("noscript");
+    gtmNoscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQKBLGGM" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
+    document.body.prepend(gtmNoscript);
+
+    // Добавляем Яндекс.Метрику
+    let yandexScript = document.createElement("script");
+    yandexScript.innerHTML = `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(100467923, "init", {clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});`;
+    document.head.appendChild(yandexScript);
+
+    let yandexNoscript = document.createElement("noscript");
+    yandexNoscript.innerHTML = `<div><img src="https://mc.yandex.ru/watch/100467923" style="position:absolute; left:-9999px;" alt="" /></div>`;
+    document.body.appendChild(yandexNoscript);
+
+    // Добавляем Facebook Pixel
+    let fbScript = document.createElement("script");
+    fbScript.innerHTML = `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1302067127553439'); fbq('track', 'PageView');`;
+    document.head.appendChild(fbScript);
+
+    let fbNoscript = document.createElement("noscript");
+    fbNoscript.innerHTML = `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1302067127553439&ev=PageView&noscript=1"/>`;
+    document.body.appendChild(fbNoscript);
+
+    tagsInited = true
+  }
+
+  function loadScript(src, callback) {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = callback;
+    document.head.appendChild(script);
+  }
+
+
+</script>
+<script>
+
+</script>
+</body>
+</html>
